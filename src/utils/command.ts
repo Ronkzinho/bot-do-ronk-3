@@ -8,8 +8,10 @@ export interface commandIterface{
     allowDm?: Boolean
     category?: string | Array<string>
     manutencion?: Boolean;
-    owner?: Blob;
+    owner?: Boolean;
     description?: string;
+    usage?: Array<string>;
+    run({ message, args, prefix }: runCommand): any
 }
 export interface runCommand{
     message: Message
@@ -25,6 +27,7 @@ export class command implements commandIterface{
     manutencion;
     owner;
     description;
+    usage;
     constructor(name, client){
         this.name = name
         this.client = client
@@ -34,5 +37,7 @@ export class command implements commandIterface{
         this.manutencion = false
         this.owner = false
         this.description = null
+        this.usage = []
     }
+    run({ message, args, prefix }: runCommand){ }
 }

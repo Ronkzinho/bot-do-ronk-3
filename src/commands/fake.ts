@@ -7,6 +7,7 @@ export default abstract class extends command{
         this.name = "fake"
         this.category = "fun"
         this.description = "Comando que cria uma webhook para mandar uma mensagem específica com o usuário que você quiser!"
+        this.usage = [`${this.name} <usuário> <msg>`, `${this.name} <msg>`]
     }
     async run({ message, args }: runCommand){
         var user: User = message.mentions.users.first() || this.client.users.cache.get(args[0]) || message.author

@@ -1,8 +1,9 @@
 import { Client, Collection } from "discord.js"
 import { readdirSync, statSync } from "fs"
+import { commandIterface } from "./utils/command";
 
 export default class BotDoRonk3 extends Client{
-    commands: Collection<any, any>
+    commands: Collection<any, commandIterface>
     owner;
     inviteLink: string;
     gitHubRepository;
