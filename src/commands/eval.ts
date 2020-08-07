@@ -6,6 +6,8 @@ export default abstract class extends command{
         super(name, client)
         this.name = "eval"
         this.owner = true
+        this.allowDm = ["e", "execute"]
+        this.description = "Comando para executar algo!"
     }
     async run({ message, args }: runCommand){
         if(message.author.id !== this.client.owner) return

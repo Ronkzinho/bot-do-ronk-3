@@ -7,6 +7,7 @@ export default abstract class extends command{
         super(name, client)
         this.name = "help"
         this.aliases = ["ajuda", "h"]
+        this.description = "Comando para dar a ajuda necessária!"
         this.allowDm = true
     }
     async run({ message, prefix }: runCommand){

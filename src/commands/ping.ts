@@ -6,6 +6,7 @@ export default abstract class extends command{
         super(name, client)
         this.name = "ping"
         this.category = "utility"
+        this.description = "Comando para a ver a latência do bot!"
     }
     async run({ message }: runCommand){
         var msg = await message.channel.send("Ping?")
