@@ -5,7 +5,6 @@ export default abstract class extends command{
     constructor(name, client){
         super(name, client)
         this.name = "fake"
-        this.manutencion = true
         this.category = "fun"
     }
     async run({ message, args }: runCommand){
