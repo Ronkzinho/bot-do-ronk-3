@@ -11,6 +11,9 @@ export default abstract class extends command{
     }
     async run({ message, args }: runCommand){
         var user: User = message.mentions.users.first() || this.client.users.cache.get(args[0]) || message.author
+        if(!args[1] && user.id === message.author.id){
+            return message.channel.send("Insira um texto!")
+        }
         var channel = message.channel as TextChannel
         message.delete()
         var w = await channel.createWebhook(user.username, { avatar: user.displayAvatarURL() })

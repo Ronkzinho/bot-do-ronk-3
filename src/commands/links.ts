@@ -9,6 +9,7 @@ export default abstract class extends command{
         this.allowDm = true
         this.category = "utility"
         this.description = "Comando para que você possa ver os links relacionados ao bot!"
+        this.usage = [`${this.name}`]
     }
     async run({ message, prefix }: runCommand){
         var embed = new MessageEmbed({
