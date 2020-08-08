@@ -18,7 +18,7 @@ export default abstract class extends command{
         var embed = new MessageEmbed({
             title: `Avatar de ${user.username}`,
             description: `**Clique [aqui](${avatar}) para baixar a imagem!**`,
-            image: { url: avatar },
+            image: { url: avatar.replace(".webp", ".gif") },
             color: message.member.displayColor
         })
         message.channel.send(embed)
